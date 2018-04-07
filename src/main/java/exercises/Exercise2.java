@@ -58,10 +58,12 @@ public class Exercise2 {
 	interface IntPred {
 	    boolean test(Integer value);
 	}
-	boolean check1(Predicate<Integer> predicate, int num) {
+	int num = 4;
+	
+	boolean check1(Predicate<Integer> predicate) {
 		return predicate.test(num);
 	}
-	boolean check2(IntPred predicate, int num) {
+	boolean check2(IntPred predicate) {
 		return predicate.test(num);
 	}
 	
@@ -73,8 +75,8 @@ public class Exercise2 {
 		button.addActionListener(event ->
 		  System.out.println(event.getActionCommand()));
 		
-		assertEquals(Boolean.FALSE, check1(x -> x > 5, 4));
-		assertEquals(Boolean.FALSE, check2(x -> x > 5, 4));
+		assertEquals(Boolean.FALSE, check1(x -> x > 5));
+		assertEquals(Boolean.FALSE, check2(x -> x > 5));
 	}
 
 }
